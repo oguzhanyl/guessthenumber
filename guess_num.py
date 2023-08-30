@@ -9,9 +9,9 @@ def game():
     # Tahmin döngüsü şartı:
     end_game = True
     stage = input("Choose a difficulty: Type 'hard' or 'easy': ")
-    if stage == "hard":
+    if stage.lower() == "hard":
         health = 5
-    elif stage == "easy":
+    elif stage.lower() == "easy":
         health = 10
     # Tahmin döngüsü:
     while end_game:
@@ -22,12 +22,12 @@ def game():
         elif user_guess > pc_random:
             # Son tahminde tekrar tahmin et ve bu kadar canın kaldı dememesi için koşul:
             if health - 1 > 0:
-                print(f"Too high.\nGuess again.\n You have {health - 1} attempts remaining to guess the number.")
+                print(f"Too high.\nGuess again.\nYou have {health - 1} attempts remaining to guess the number.")
             else:
                 print("Too high.")
         elif user_guess < pc_random:
             if health - 1 > 0:
-                print(f"Too low.\nGuess again.\n You have {health - 1} attempts remaining to guess the number.")
+                print(f"Too low.\nGuess again.\nYou have {health - 1} attempts remaining to guess the number.")
             else:
                 print("Too low.")
         health -= 1
